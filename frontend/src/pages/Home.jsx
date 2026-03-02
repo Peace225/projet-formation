@@ -29,7 +29,7 @@ export default function Home() {
           </h1>
           
           <p className="text-base sm:text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed px-2">
-            Imaginez une visite surprise des impôts demain... Découvrez-vous une situation irrégulière à cause d'un contrat mal rédigé ? 
+            Imaginez-vous rater un financement d'une banque, un partenariat solide ou perdre un intant, des années de sacrifice et de dur labeur, à cause d'un manque de structuration juridique ou fiscale. <br/>
             <strong className="text-white font-semibold"> Prenez le contrôle avant qu'il ne soit trop tard.</strong>
           </p>
         </div>
@@ -66,7 +66,7 @@ export default function Home() {
               Ne payez que ce que vous devez. Utilisez la loi à votre avantage.
             </p>
             <ul className="space-y-3 text-slate-200 text-xs sm:text-sm font-medium">
-              <li className="flex gap-3"><span className="text-amber-400 font-bold">✔</span> Réduction d'impôts</li>
+              <li className="flex gap-3"><span className="text-amber-400 font-bold">✔</span> Réduction de la pression fiscale</li>
               <li className="flex gap-3"><span className="text-amber-400 font-bold">✔</span> Éviter les pénalités</li>
             </ul>
           </div>
@@ -78,10 +78,10 @@ export default function Home() {
             </div>
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-3">Sérénité Absolue</h2>
             <p className="text-slate-400 mb-6 leading-relaxed text-sm">
-              Anticipez les contrôles des impôts avec une gestion irréprochable.
+             Bâtir une entreprise durable, structuré et sécurisée.
             </p>
             <ul className="space-y-3 text-slate-300 text-xs sm:text-sm">
-              <li className="flex gap-3"><span className="text-amber-500 font-bold">✔</span> Préparation aux audits</li>
+              <li className="flex gap-3"><span className="text-amber-500 font-bold">✔</span> Assistance juridique</li>
               <li className="flex gap-3"><span className="text-amber-500 font-bold">✔</span> Gestion administrative</li>
             </ul>
           </div>

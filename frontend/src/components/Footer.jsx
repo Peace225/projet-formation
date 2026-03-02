@@ -17,12 +17,30 @@ export default function Footer() {
                 alt="Logo Life Team" 
                 className="h-6 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" 
               />
-              <span className="text-xs font-bold text-white tracking-widest uppercase">
+              <span className="text-ls font-bold text-white tracking-widest uppercase">
                 <span className="text-amber-500">Life</span> Team
               </span>
             </Link>
             <p className="text-xs leading-relaxed max-w-sm text-slate-500">
-              Le cabinet de référence pour la sécurisation juridique et l'optimisation fiscale de votre entreprise en Côte d'Ivoire. Bâtissons ensemble des fondations inébranlables.
+              Communauté des entrepreneurs visionnaires dont la mission est de former et transformer pour l'excellence. 
+            </p>
+          </div>
+          <div className="md:col-span-2">
+            <Link to="/" className="flex items-center gap-2 mb-3 hover:opacity-80 transition-opacity">
+              <img 
+                src="/images/logoSolex.jpeg" 
+                alt="Logo Solex" 
+                className="h-6 w-auto grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all" 
+              />
+              <span className="text-ls font-bold text-white tracking-widest uppercase">
+                <span className="text-amber-500">Sol</span>ex
+              </span>
+            </Link>
+            <p className="text-xs leading-relaxed max-w-sm text-slate-500">
+              Le cabinet de conformité juridique & Legaltech.
+            </p>
+            <p className="text-xs leading-relaxed max-w-sm text-slate-500">
+              Sécuriser aujourd'hui. Garantir demain
             </p>
           </div>
 
@@ -49,8 +67,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <span className="text-xs">📞</span> 
-                <a href="https://wa.me/2250102030405" target="_blank" rel="noopener noreferrer" className="hover:text-amber-500 transition-colors">
-                  +225 01 02 03 04 05
+                <a href="https://wa.me/2250151104839" target="_blank" rel="noopener noreferrer" className="hover:text-amber-500 transition-colors">
+                  +225 01 51 10 48 39
                 </a>
               </li>
             </ul>
