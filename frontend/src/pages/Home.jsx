@@ -111,7 +111,7 @@ export default function Home() {
                 <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-lg shrink-0 border border-slate-100">📅</div>
                 <div>
                   <p className="text-slate-400 text-[10px] uppercase font-bold mb-1">Date & Heure</p>
-                  <p className="font-bold text-slate-900 text-sm sm:text-base">07 Avril 2026</p>
+                  <p className="font-bold text-slate-900 text-sm sm:text-base">06 Avril 2026</p>
                   <p className="text-slate-600 text-xs">10h00 - 12h00</p>
                 </div>
               </div>
