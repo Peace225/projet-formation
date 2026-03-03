@@ -37,7 +37,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-xs leading-relaxed max-w-sm text-slate-500">
-              Le cabinet de conformité juridique & Legaltech.
+              Cabinet de conformité juridique & Legaltech.
             </p>
             <p className="text-xs leading-relaxed max-w-sm text-slate-500">
               Sécuriser aujourd'hui. Garantir demain

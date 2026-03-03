@@ -29,7 +29,7 @@ export default function Home() {
           </h1>
           
           <p className="text-base sm:text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed px-2">
-            Imaginez-vous rater un financement d'une banque, un partenariat solide ou perdre un intant, des années de sacrifice et de dur labeur, à cause d'un manque de structuration juridique ou fiscale. <br/>
+            Imaginez-vous rater un financement d'une banque, un partenariat solide ou perdre un instant, des années de sacrifice et de dur labeur, à cause d'un manque de structuration juridique ou fiscale. <br/>
             <strong className="text-white font-semibold"> Prenez le contrôle avant qu'il ne soit trop tard.</strong>
           </p>
         </div>
