@@ -48,11 +48,14 @@ export default function Home() {
             </div>
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-3">Bouclier Juridique</h2>
             <p className="text-slate-400 mb-6 leading-relaxed text-sm">
-              Bâtissez des fondations inébranlables. Sécurisez chaque aspect de votre business.
+              Bâtissez des fondations juridiques inébranlables. Sécurisez chaque aspect de votre business.
             </p>
             <ul className="space-y-3 text-slate-300 text-xs sm:text-sm">
-              <li className="flex gap-3"><span className="text-amber-500 font-bold">✔</span> Rédaction de contrats</li>
-              <li className="flex gap-3"><span className="text-amber-500 font-bold">✔</span> Choix des statuts</li>
+              <li className="flex gap-3"><span className="text-amber-500 font-bold">✔</span> Choix de la forme juridique</li>
+              <li className="flex gap-3"><span className="text-amber-500 font-bold">✔</span> Conformité réglementaire liée à l'activité</li>
+              <li className="flex gap-3"><span className="text-amber-500 font-bold">✔</span> Modèles d'actes et contrats adaptés à l'activité</li>
+              <li className="flex gap-3"><span className="text-amber-500 font-bold">✔</span> Protection des actifs stratégiques</li>
+              <li className="flex gap-3"><span className="text-amber-500 font-bold">✔</span> Protection des dirigeants</li>
             </ul>
           </div>
 
@@ -66,8 +69,11 @@ export default function Home() {
               Ne payez que ce que vous devez. Utilisez la loi à votre avantage.
             </p>
             <ul className="space-y-3 text-slate-200 text-xs sm:text-sm font-medium">
-              <li className="flex gap-3"><span className="text-amber-400 font-bold">✔</span> Réduction de la pression fiscale</li>
-              <li className="flex gap-3"><span className="text-amber-400 font-bold">✔</span> Éviter les pénalités</li>
+              <li className="flex gap-3"><span className="text-amber-400 font-bold">✔</span> Choix du régime fiscal le plus adapté à l’activité </li>
+              <li className="flex gap-3"><span className="text-amber-400 font-bold">✔</span> Identification des exonérations et incitations fiscales applicables</li>
+              <li className="flex gap-3"><span className="text-amber-400 font-bold">✔</span> Tableau de bord fiscal du dirigeant</li>
+              <li className="flex gap-3"><span className="text-amber-400 font-bold">✔</span> Structuration fiscale des investissements</li>
+              <li className="flex gap-3"><span className="text-amber-400 font-bold">✔</span> Gestion des contentieux fiscaux (pénalités)</li>
             </ul>
           </div>
 
@@ -76,13 +82,15 @@ export default function Home() {
             <div className="w-12 h-12 sm:w-14 sm:h-14 bg-slate-800 border border-slate-700 rounded-2xl flex items-center justify-center mb-6 shadow-inner">
               <svg className="w-6 h-6 sm:w-7 sm:h-7 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
             </div>
-            <h2 className="text-xl sm:text-2xl font-bold text-white mb-3">Sérénité Absolue</h2>
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-3">Sérénité juridique étendue</h2>
             <p className="text-slate-400 mb-6 leading-relaxed text-sm">
-             Bâtir une entreprise durable, structuré et sécurisée.
+              Bâtir une entreprise durable, structuré et conforme .
             </p>
             <ul className="space-y-3 text-slate-300 text-xs sm:text-sm">
-              <li className="flex gap-3"><span className="text-amber-500 font-bold">✔</span> Assistance juridique</li>
-              <li className="flex gap-3"><span className="text-amber-500 font-bold">✔</span> Gestion administrative</li>
+              <li className="flex gap-3"><span className="text-amber-500 font-bold">✔</span> Gouvernance et organisation interne</li>
+              <li className="flex gap-3"><span className="text-amber-500 font-bold">✔</span> Prévention des litiges</li>
+              <li className="flex gap-3"><span className="text-amber-500 font-bold">✔</span> Sécurisation sociale et RH </li>
+              <li className="flex gap-3"><span className="text-amber-500 font-bold">✔</span> Gestion des risques et continuité</li>
             </ul>
           </div>
         </div>
