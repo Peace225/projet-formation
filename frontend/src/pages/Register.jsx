@@ -81,13 +81,6 @@ export default function Register() {
                 onChange={(e) => setFormData({...formData, email: e.target.value})} />
             </div>
 
-            <div>
-              <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Créer un mot de passe</label>
-              <input type="password" required 
-                className="w-full bg-slate-900/50 text-white p-4 border border-slate-700 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all placeholder-slate-500" 
-                placeholder="Pour sécuriser votre accès"
-                onChange={(e) => setFormData({...formData, password: e.target.value})} />
-            </div>
 
             <button type="submit" disabled={loading} 
               className="w-full bg-gradient-to-r from-amber-500 to-amber-600 text-slate-900 py-4 mt-6 rounded-xl font-extrabold text-lg hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center gap-2">
