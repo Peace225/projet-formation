@@ -1,13 +1,16 @@
 import React, { useState } from "react";
-import { auth, db } from "../firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { setDoc, doc } from "firebase/firestore";
-import { useNavigate, Link } from "react-router-dom";
+import { db } from "../firebase"; // On ne garde que la base de données
+import { collection, addDoc } from "firebase/firestore"; // Import de collection et addDoc
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
 export default function Register() {
+  // Le mot de passe a été retiré du state initial
   const [formData, setFormData] = useState({ 
-    nom: "", telephone: "", email: "", password: "", formation: "Masterclass Fiscale & Juridique - 07/04" 
+    nom: "", 
+    telephone: "", 
+    email: "", 
+    formation: "Masterclass Fiscale & Juridique - 07/04" 
   });
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -16,9 +19,9 @@ export default function Register() {
     e.preventDefault();
     setLoading(true);
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, formData.email, formData.password);
-      
-      await setDoc(doc(db, "inscriptions", userCredential.user.uid), {
+      // Enregistrement DIRECT dans la collection "inscriptions"
+      // addDoc génère automatiquement un ID unique pour le document
+      await addDoc(collection(db, "inscriptions"), {
         nom: formData.nom,
         telephone: formData.telephone,
         email: formData.email,
@@ -27,9 +30,9 @@ export default function Register() {
         dateInscription: new Date().toISOString()
       });
 
-      navigate("/success"); // Redirection vers la page de paiement
+      navigate("/success"); // Redirection vers la page de succès
     } catch (error) {
-      alert("Erreur : " + error.message);
+      alert("Erreur lors de la réservation : " + error.message);
     } finally {
       setLoading(false);
     }
@@ -80,7 +83,6 @@ export default function Register() {
                 placeholder="votre.email@entreprise.com"
                 onChange={(e) => setFormData({...formData, email: e.target.value})} />
             </div>
-
 
             <button type="submit" disabled={loading} 
               className="w-full bg-gradient-to-r from-amber-500 to-amber-600 text-slate-900 py-4 mt-6 rounded-xl font-extrabold text-lg hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] transition-all disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center gap-2">
