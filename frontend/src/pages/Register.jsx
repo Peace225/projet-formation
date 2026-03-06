@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { db } from "../firebase"; // On ne garde que la base de données
-import { collection, addDoc } from "firebase/firestore"; // Import de collection et addDoc
+import { db } from "../firebase";
+import { collection, addDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
 export default function Register() {
-  // Le mot de passe a été retiré du state initial
   const [formData, setFormData] = useState({ 
     nom: "", 
+    indicatif: "+225", // Valeur par défaut
     telephone: "", 
     email: "", 
     formation: "Masterclass Fiscale & Juridique - 07/04" 
@@ -19,18 +19,17 @@ export default function Register() {
     e.preventDefault();
     setLoading(true);
     try {
-      // Enregistrement DIRECT dans la collection "inscriptions"
-      // addDoc génère automatiquement un ID unique pour le document
       await addDoc(collection(db, "inscriptions"), {
         nom: formData.nom,
-        telephone: formData.telephone,
+        // Concaténation de l'indicatif saisi et du numéro
+        telephone: `${formData.indicatif} ${formData.telephone}`, 
         email: formData.email,
         formation: formData.formation,
         statutPaiement: "En attente",
         dateInscription: new Date().toISOString()
       });
 
-      navigate("/success"); // Redirection vers la page de succès
+      navigate("/success"); 
     } catch (error) {
       alert("Erreur lors de la réservation : " + error.message);
     } finally {
@@ -38,18 +37,25 @@ export default function Register() {
     }
   };
 
+  // Fonction pour gérer la saisie de l'indicatif (force le "+")
+  const handleIndicatifChange = (e) => {
+    let value = e.target.value.replace(/[^0-9+]/g, ''); // N'accepte que les chiffres et le "+"
+    if (value !== "" && !value.startsWith("+")) {
+      value = "+" + value;
+    }
+    setFormData({ ...formData, indicatif: value });
+  };
+
   return (
     <div className="min-h-screen bg-slate-900 font-sans selection:bg-amber-200 flex flex-col relative overflow-hidden">
       <Navbar />
 
-      {/* Effets de lumière en arrière-plan */}
       <div className="absolute top-20 left-0 w-96 h-96 bg-amber-500/10 blur-[100px] rounded-full pointer-events-none"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-slate-700/30 blur-[100px] rounded-full pointer-events-none"></div>
 
       <div className="flex-grow flex items-center justify-center p-4 relative z-10">
         <div className="bg-slate-800/80 backdrop-blur-xl p-8 sm:p-10 rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.5)] w-full max-w-lg border border-slate-700 relative overflow-hidden">
           
-          {/* Ligne dorée en haut de la carte */}
           <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-amber-400 to-amber-600"></div>
 
           <div className="text-center mb-8">
@@ -65,22 +71,42 @@ export default function Register() {
               <input type="text" required 
                 className="w-full bg-slate-900/50 text-white p-4 border border-slate-700 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all placeholder-slate-500" 
                 placeholder="Ex: Jean Dupont"
+                value={formData.nom}
                 onChange={(e) => setFormData({...formData, nom: e.target.value})} />
             </div>
 
+            {/* --- BLOC TÉLÉPHONE MIS À JOUR --- */}
             <div>
               <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Numéro WhatsApp / Appel</label>
-              <input type="tel" required 
-                className="w-full bg-slate-900/50 text-white p-4 border border-slate-700 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all placeholder-slate-500 font-mono" 
-                placeholder="Ex: 01 02 03 04 05"
-                onChange={(e) => setFormData({...formData, telephone: e.target.value})} />
+              <div className="flex w-full bg-slate-900/50 border border-slate-700 rounded-xl focus-within:ring-2 focus-within:ring-amber-500 focus-within:border-amber-500 transition-all overflow-hidden">
+                
+                {/* Champ de saisie libre pour l'indicatif */}
+                <input 
+                  type="text" 
+                  className="bg-slate-800 text-white px-3 py-4 border-r border-slate-700 outline-none w-20 text-center font-mono text-sm focus:bg-slate-700 transition-colors placeholder-slate-500"
+                  placeholder="+225"
+                  maxLength="5" // Limite la longueur à 5 caractères (ex: +1234)
+                  value={formData.indicatif}
+                  onChange={handleIndicatifChange}
+                />
+
+                {/* Champ Numéro de téléphone */}
+                <input type="tel" required 
+                  className="flex-grow bg-transparent text-white p-4 outline-none placeholder-slate-500 font-mono w-full" 
+                  placeholder="01 02 03 04 05"
+                  value={formData.telephone}
+                  onChange={(e) => setFormData({...formData, telephone: e.target.value.replace(/[^0-9\s]/g, '')})} // N'accepte que les chiffres et les espaces
+                />
+              </div>
             </div>
+            {/* --------------------------------- */}
 
             <div>
               <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Email Professionnel</label>
               <input type="email" required 
                 className="w-full bg-slate-900/50 text-white p-4 border border-slate-700 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition-all placeholder-slate-500" 
                 placeholder="votre.email@entreprise.com"
+                value={formData.email}
                 onChange={(e) => setFormData({...formData, email: e.target.value})} />
             </div>
 
